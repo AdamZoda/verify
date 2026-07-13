@@ -90,14 +90,20 @@ function App() {
               </p>
 
               <div className="flex items-center gap-4">
-                <button className="px-6 py-3 rounded-full bg-gray-300 hover:bg-gray-400 text-gray-800 font-medium text-sm transition-colors duration-200">
-                  Discover
+                <button className="px-6 py-3 rounded-full bg-amber-500 hover:bg-amber-600 text-gray-950 font-semibold text-sm transition-all duration-300 shadow-md shadow-amber-500/20 hover:scale-105">
+                  Free
                 </button>
                 <button 
-                  className="px-6 py-3 rounded-full text-white font-medium text-sm transition-colors duration-200"
+                  className="px-6 py-3 rounded-full text-white font-semibold text-sm transition-all duration-300 border border-amber-500/30 hover:border-amber-500 hover:scale-105 shadow-lg"
                   style={{ backgroundColor: '#202A36' }}
-                  onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#1a2229'}
-                  onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#202A36'}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.backgroundColor = '#1a2229';
+                    e.currentTarget.style.boxShadow = '0 0 15px rgba(245, 158, 11, 0.4)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.backgroundColor = '#202A36';
+                    e.currentTarget.style.boxShadow = 'none';
+                  }}
                 >
                   Book Now
                 </button>
