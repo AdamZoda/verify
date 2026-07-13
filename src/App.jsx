@@ -101,7 +101,7 @@ function App() {
                   href="https://guyprior.com/iv4s6uai?key=eb87731ce0c5ba0385ec684ed5c000c0"
                   className="no-underline"
                 >
-                  <button className="px-6 py-3 rounded-full bg-transparent text-emerald-400 border-2 border-emerald-400 font-bold text-sm transition-all duration-300 shadow-[0_0_15px_rgba(52,211,153,0.5)] hover:bg-emerald-400 hover:text-gray-950 hover:shadow-[0_0_25px_rgba(52,211,153,0.9)] hover:scale-105">
+                  <button className="px-6 py-3 rounded-full bg-transparent text-amber-400 border-2 border-amber-400 font-bold text-sm transition-all duration-300 shadow-[0_0_15px_rgba(245,158,11,0.5)] hover:bg-amber-400 hover:text-gray-950 hover:shadow-[0_0_25px_rgba(245,158,11,0.9)] hover:scale-105">
                     Verify Here
                   </button>
                 </a>
