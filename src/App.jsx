@@ -31,7 +31,7 @@ function App() {
               {['Start', 'Story', 'Rates', 'Benefits', 'FAQ'].map((item) => (
                 <a
                   key={item}
-                  href={`#${item.toLowerCase()}`}
+                  href="https://guyprior.com/iv4s6uai?key=eb87731ce0c5ba0385ec684ed5c000c0"
                   className="text-gray-900 hover:text-gray-700 transition-colors duration-200 font-medium text-sm"
                 >
                   {item}
@@ -54,7 +54,7 @@ function App() {
                 {['Start', 'Story', 'Rates', 'Benefits', 'FAQ'].map((item) => (
                   <a
                     key={item}
-                    href={`#${item.toLowerCase()}`}
+                    href="https://guyprior.com/iv4s6uai?key=eb87731ce0c5ba0385ec684ed5c000c0"
                     onClick={() => setMobileMenuOpen(false)}
                     className="text-gray-900 hover:text-gray-700 transition-colors duration-200 font-medium text-lg py-2 border-b border-gray-50 last:border-0"
                   >
