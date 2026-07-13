@@ -30,106 +30,20 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  min-height: 100vh;
+  width: 100%;
 }
 
-.captcha-box {
-  background: #fff;
-  border: 1px solid #d3d3d3;
-  border-radius: 4px;
-  width: 300px;
-  padding: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-}
-
-.left-side {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-
-.checkbox-wrapper {
-  position: relative;
-  width: 24px;
-  height: 24px;
-  flex-shrink: 0;
-  cursor: pointer;
-}
-
-.custom-checkbox {
-  width: 24px;
-  height: 24px;
-  border: 2px solid #c8c8c8;
-  border-radius: 2px;
-  background: #fff;
+.page {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: border-color 0.2s;
+  width: 100%;
+  min-height: 100vh;
 }
 
-.custom-checkbox.checked {
-  border-color: #4a90d9;
-}
-
-.custom-checkbox .tick {
-  color: #4a90d9;
-  font-size: 13px;
-  font-weight: bold;
-  line-height: 1;
-}
-
-.spinner {
-  width: 20px;
-  height: 20px;
-  border: 3px solid #e0e0e0;
-  border-top: 3px solid #4a90d9;
-  border-radius: 50%;
-  animation: spin 0.7s linear infinite;
-  position: absolute;
-  top: 2px;
-  left: 2px;
-  pointer-events: none;
-}
-
-@keyframes spin {
-  to { transform: rotate(360deg); }
-}
-
-.label-text {
-  font-size: 14px;
-  color: #333;
-  user-select: none;
-  cursor: pointer;
-}
-
-.verified-text {
-  color: #4caf50;
-  font-size: 13px;
-  font-weight: 500;
-}
-
-.right-side {
+.turnstile-wrapper {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 2px;
-}
-
-.recaptcha-logo {
-  width: 32px;
-  height: 32px;
-}
-
-.brand-name {
-  font-size: 8px;
-  color: #555;
-  letter-spacing: 0.3px;
-}
-
-.brand-sub {
-  font-size: 7px;
-  color: #888;
+  justify-content: center;
 }

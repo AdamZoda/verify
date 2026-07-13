@@ -1,52 +1,49 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import './index.css'
 
 function App() {
-  const [status, setStatus] = useState('idle')
+  const turnstileRef = useRef(null)
+  const widgetId = useRef(null)
+  const [verified, setVerified] = useState(false)
 
-  const handleCheck = () => {
-    if (status !== 'idle') return
-    setStatus('checking')
-    setTimeout(() => {
-      setStatus('verified')
-    }, 1200)
-  }
+  useEffect(() => {
+    const renderWidget = () => {
+      if (window.turnstile && turnstileRef.current && widgetId.current === null) {
+        widgetId.current = window.turnstile.render(turnstileRef.current, {
+          sitekey: '0x4AAAAAAD00HG4oCD3LiqmR',
+          callback: (token) => {
+            console.log('Turnstile token:', token)
+            setVerified(true)
+          },
+          'error-callback': () => {
+            setVerified(false)
+          },
+          'expired-callback': () => {
+            setVerified(false)
+          },
+          theme: 'light',
+        })
+      }
+    }
+
+    // Wait for Turnstile script to load
+    if (window.turnstile) {
+      renderWidget()
+    } else {
+      const interval = setInterval(() => {
+        if (window.turnstile) {
+          clearInterval(interval)
+          renderWidget()
+        }
+      }, 100)
+      return () => clearInterval(interval)
+    }
+  }, [])
 
   return (
-    <div className="captcha-box">
-      <div className="left-side">
-        <div className="checkbox-wrapper" onClick={handleCheck}>
-          <div className={`custom-checkbox ${status === 'verified' ? 'checked' : ''}`}>
-            {status === 'verified' && <span className="tick">✔</span>}
-          </div>
-          {status === 'checking' && <div className="spinner" />}
-        </div>
-        {status === 'verified' ? (
-          <span className="verified-text">✔ Vérifié</span>
-        ) : (
-          <span className="label-text">Je ne suis pas un robot</span>
-        )}
-      </div>
-
-      <div className="right-side">
-        <svg className="recaptcha-logo" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="32" cy="32" r="30" fill="#4a90d9" opacity="0.15" />
-          <path
-            d="M32 10 C20 10, 10 20, 10 32 C10 44, 20 54, 32 54 C44 54, 54 44, 54 32 C54 20, 44 10, 32 10Z"
-            stroke="#4a90d9"
-            strokeWidth="3"
-            fill="none"
-          />
-          <path
-            d="M22 32 L28 38 L42 24"
-            stroke="#4a90d9"
-            strokeWidth="4"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
-        <span className="brand-name">reCAPTCHA</span>
-        <span className="brand-sub">Confidentialité · Conditions</span>
+    <div className="page">
+      <div className="turnstile-wrapper">
+        <div ref={turnstileRef} />
       </div>
     </div>
   )
