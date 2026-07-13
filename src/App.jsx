@@ -10,7 +10,7 @@ function App() {
     const renderWidget = () => {
       if (window.turnstile && turnstileRef.current && widgetId.current === null) {
         widgetId.current = window.turnstile.render(turnstileRef.current, {
-          sitekey: '0x4AAAAAAD00HG4oCD3LiqmR',
+          sitekey: import.meta.env.VITE_TURNSTILE_SITE_KEY,
           callback: (token) => {
             console.log('Turnstile token:', token)
             setVerified(true)
