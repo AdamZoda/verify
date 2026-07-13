@@ -94,18 +94,18 @@ function App() {
                   Free
                 </button>
                 <button 
-                  className="px-6 py-3 rounded-full text-white font-semibold text-sm transition-all duration-300 border border-amber-500/30 hover:border-amber-500 hover:scale-105 shadow-lg"
+                  className="px-6 py-3 rounded-full text-white font-semibold text-sm transition-all duration-300 border border-amber-500 hover:scale-105 shadow-lg"
                   style={{ backgroundColor: '#202A36' }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.backgroundColor = '#1a2229';
-                    e.currentTarget.style.boxShadow = '0 0 15px rgba(245, 158, 11, 0.4)';
+                    e.currentTarget.style.boxShadow = '0 0 15px rgba(245, 158, 11, 0.6)';
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.backgroundColor = '#202A36';
                     e.currentTarget.style.boxShadow = 'none';
                   }}
                 >
-                  Book Now
+                  Premium
                 </button>
               </div>
             </div>
