@@ -89,7 +89,11 @@ function App() {
                 <span>Now accessible from</span>
                 <span className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-red-600 text-white font-bold shadow-md border border-white/20">
                   <span>CANADA</span>
-                  <span className="text-xl leading-none">🇨🇦</span>
+                  <img 
+                    src="https://flagcdn.com/w40/ca.png" 
+                    alt="Canada Flag" 
+                    className="w-6 h-4 object-cover rounded-sm border border-white/20"
+                  />
                 </span>
               </p>
 
