@@ -24,7 +24,6 @@ function App() {
           {/* Navigation Bar */}
           <nav className="w-full max-w-7xl mx-auto px-8 py-6 flex items-center justify-between">
             <span className="text-2xl font-semibold text-gray-900 tracking-tight">
-              SkyElite
             </span>
 
             {/* Desktop Navigation */}
@@ -70,18 +69,18 @@ function App() {
           <div className="flex-1 flex items-center justify-center px-8">
             <div className="text-center -mt-36 flex flex-col items-center max-w-4xl">
               <span className="text-sm font-semibold text-gray-600 tracking-wider uppercase mb-4">
-                PRIVATE JETS
+                DISCORD
               </span>
               
               <h1 className="flex flex-col items-center">
                 <span className="text-6xl md:text-7xl lg:text-8xl font-normal text-gray-500 leading-none tracking-tighter">
-                  Premium.
+                  Canada.
                 </span>
                 <span 
                   className="text-6xl md:text-7xl lg:text-8xl font-normal leading-none tracking-tighter -mt-2 md:-mt-3 lg:-mt-4"
                   style={{ color: '#202A36' }}
                 >
-                  Accessible.
+                  Meeting.
                 </span>
               </h1>
               
@@ -102,7 +101,7 @@ function App() {
                   Free
                 </button>
                 <button 
-                  className="px-6 py-3 rounded-full text-white font-semibold text-sm transition-all duration-300 border border-amber-500 hover:scale-105 shadow-lg"
+                  className="px-6 py-3 rounded-full text-white font-semibold text-sm transition-all duration-300 border border-amber-500 hover:scale-105 shadow-lg flex items-center gap-2"
                   style={{ backgroundColor: '#202A36' }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.backgroundColor = '#1a2229';
@@ -113,7 +112,11 @@ function App() {
                     e.currentTarget.style.boxShadow = 'none';
                   }}
                 >
-                  Premium
+                  <span>Premium</span>
+                  <div className="relative w-5 h-5 flex items-center justify-center bg-white rounded-full border border-red-500">
+                    <span className="text-[6px] font-bold text-black scale-90">ADS</span>
+                    <div className="absolute inset-0 border-t-2 border-red-500 rotate-45 top-1/2 -translate-y-1/2"></div>
+                  </div>
                 </button>
               </div>
             </div>
