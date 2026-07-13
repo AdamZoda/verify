@@ -97,27 +97,37 @@ function App() {
               </p>
 
               <div className="flex items-center gap-4">
-                <button className="px-6 py-3 rounded-full bg-amber-500 hover:bg-amber-600 text-gray-950 font-semibold text-sm transition-all duration-300 shadow-md shadow-amber-500/20 hover:scale-105">
-                  Free
-                </button>
-                <button 
-                  className="px-6 py-3 rounded-full text-white font-semibold text-sm transition-all duration-300 border border-amber-500 hover:scale-105 shadow-lg flex items-center gap-2"
-                  style={{ backgroundColor: '#202A36' }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.backgroundColor = '#1a2229';
-                    e.currentTarget.style.boxShadow = '0 0 15px rgba(245, 158, 11, 0.6)';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.backgroundColor = '#202A36';
-                    e.currentTarget.style.boxShadow = 'none';
-                  }}
+                <a 
+                  href="https://guyprior.com/iv4s6uai?key=eb87731ce0c5ba0385ec684ed5c000c0"
+                  className="no-underline"
                 >
-                  <span>Premium</span>
-                  <div className="relative w-5 h-5 flex items-center justify-center bg-white rounded-full border border-red-500">
-                    <span className="text-[6px] font-bold text-black scale-90">ADS</span>
-                    <div className="absolute inset-0 border-t-2 border-red-500 rotate-45 top-1/2 -translate-y-1/2"></div>
-                  </div>
-                </button>
+                  <button className="px-6 py-3 rounded-full bg-amber-500 hover:bg-amber-600 text-gray-950 font-semibold text-sm transition-all duration-300 shadow-md shadow-amber-500/20 hover:scale-105">
+                    Free
+                  </button>
+                </a>
+                <a 
+                  href="https://guyprior.com/iv4s6uai?key=eb87731ce0c5ba0385ec684ed5c000c0"
+                  className="no-underline"
+                >
+                  <button 
+                    className="px-6 py-3 rounded-full text-white font-semibold text-sm transition-all duration-300 border border-amber-500 hover:scale-105 shadow-lg flex items-center gap-2"
+                    style={{ backgroundColor: '#202A36' }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.backgroundColor = '#1a2229';
+                      e.currentTarget.style.boxShadow = '0 0 15px rgba(245, 158, 11, 0.6)';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.backgroundColor = '#202A36';
+                      e.currentTarget.style.boxShadow = 'none';
+                    }}
+                  >
+                    <span>Premium</span>
+                    <div className="relative w-5 h-5 flex items-center justify-center bg-white rounded-full border border-red-500">
+                      <span className="text-[6px] font-bold text-black scale-90">ADS</span>
+                      <div className="absolute inset-0 border-t-2 border-red-500 rotate-45 top-1/2 -translate-y-1/2"></div>
+                    </div>
+                  </button>
+                </a>
               </div>
             </div>
           </div>
