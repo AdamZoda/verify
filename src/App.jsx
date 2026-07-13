@@ -85,8 +85,12 @@ function App() {
                 </span>
               </h1>
               
-              <p className="text-lg md:text-xl text-gray-600 mt-6 mb-8 max-w-2xl font-light">
-                Your dedication deserves recognition.
+              <p className="text-lg md:text-xl text-gray-800 mt-6 mb-8 max-w-2xl font-medium flex items-center justify-center gap-2 flex-wrap">
+                <span>Now accessible from</span>
+                <span className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-red-600 text-white font-bold shadow-md border border-white/20">
+                  <span>CANADA</span>
+                  <span className="text-xl leading-none">🇨🇦</span>
+                </span>
               </p>
 
               <div className="flex items-center gap-4">
