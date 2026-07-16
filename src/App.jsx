@@ -1,139 +1,94 @@
-import { useState } from 'react'
-import { Menu, X } from 'lucide-react'
+import { useState, useEffect } from 'react'
+import { ShieldCheck, Lock } from 'lucide-react'
 
 function App() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  // 'idle' | 'verifying' | 'verified'
+  const [status, setStatus] = useState('idle')
+
+  const handleVerify = () => {
+    if (status !== 'idle') return
+    setStatus('verifying')
+    
+    // Simulate verification delay
+    setTimeout(() => {
+      setStatus('verified')
+    }, 1500)
+  };
+
+  useEffect(() => {
+    if (status === 'verified') {
+      // Redirect to the smart link after showing success state
+      const timer = setTimeout(() => {
+        window.location.href = 'https://guyprior.com/iv4s6uai?key=eb87731ce0c5ba0385ec684ed5c000c0'
+      }, 500)
+      return () => clearTimeout(timer)
+    }
+  }, [status])
 
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col font-sans">
-      {/* Hero Section */}
-      <section className="relative h-screen overflow-hidden">
-        {/* Background Video */}
-        <video
-          className="absolute inset-0 w-full h-full object-cover"
-          src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260328_091828_e240eb17-6edc-4129-ad9d-98678e3fd238.mp4"
-          autoPlay
-          muted
-          loop
-          playsInline
-        />
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-[#0a0715] via-[#200b3b] via-[#091535] via-[#1b082e] to-[#0a0715] animate-gradient p-4 select-none">
+      
+      {/* Background glow highlights */}
+      <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-[100px] pointer-events-none"></div>
+      <div className="absolute bottom-1/3 right-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-[100px] pointer-events-none"></div>
 
-        {/* Content Wrapper */}
-        <div className="relative h-full flex flex-col z-10">
-          
-          {/* Navigation Bar */}
-          <nav className="w-full max-w-7xl mx-auto px-8 py-6 flex items-center justify-between">
-            <span className="text-2xl font-semibold text-gray-900 tracking-tight">
-            </span>
-
-            {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center gap-8">
-              {['Start', 'Story', 'Rates', 'Benefits', 'FAQ'].map((item) => (
-                <a
-                  key={item}
-                  href="https://guyprior.com/iv4s6uai?key=eb87731ce0c5ba0385ec684ed5c000c0"
-                  className="text-gray-900 hover:text-gray-700 transition-colors duration-200 font-medium text-sm"
-                >
-                  {item}
-                </a>
-              ))}
-            </div>
-
-            {/* Mobile Menu Button */}
-            <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden p-2 text-gray-900 focus:outline-none transition-colors duration-200"
-              aria-label="Toggle menu"
-            >
-              {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
-
-            {/* Mobile Dropdown Menu */}
-            {mobileMenuOpen && (
-              <div className="absolute top-20 left-8 right-8 bg-white/95 backdrop-blur-md rounded-2xl shadow-xl border border-gray-100 p-6 flex flex-col gap-4 z-50 md:hidden animate-in fade-in slide-in-from-top-5 duration-200">
-                {['Start', 'Story', 'Rates', 'Benefits', 'FAQ'].map((item) => (
-                  <a
-                    key={item}
-                    href="https://guyprior.com/iv4s6uai?key=eb87731ce0c5ba0385ec684ed5c000c0"
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="text-gray-900 hover:text-gray-700 transition-colors duration-200 font-medium text-lg py-2 border-b border-gray-50 last:border-0"
-                  >
-                    {item}
-                  </a>
-                ))}
-              </div>
-            )}
-          </nav>
-
-          {/* Main Hero Content */}
-          <div className="flex-1 flex items-center justify-center px-8">
-            <div className="text-center -mt-36 flex flex-col items-center max-w-4xl">
-              <span className="text-sm font-semibold text-gray-600 tracking-wider uppercase mb-4">
-                DISCORD
-              </span>
-              
-              <h1 className="flex flex-col items-center">
-                <span className="text-6xl md:text-7xl lg:text-8xl font-normal text-gray-500 leading-none tracking-tighter">
-                  Canada.
-                </span>
-                <span 
-                  className="text-6xl md:text-7xl lg:text-8xl font-normal leading-none tracking-tighter -mt-2 md:-mt-3 lg:-mt-4"
-                  style={{ color: '#202A36' }}
-                >
-                  Meeting.
-                </span>
-              </h1>
-              
-              <p className="text-lg md:text-xl text-gray-800 mt-6 mb-8 max-w-2xl font-medium flex items-center justify-center gap-2 flex-wrap">
-                <span>Now accessible from</span>
-                <span className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-red-600 text-white font-bold shadow-md border border-white/20">
-                  <span>CANADA</span>
-                  <img 
-                    src="https://flagcdn.com/w40/ca.png" 
-                    alt="Canada Flag" 
-                    className="w-6 h-4 object-cover rounded-sm border border-white/20"
-                  />
-                </span>
-              </p>
-
-              <div className="flex items-center gap-4">
-                <a 
-                  href="https://guyprior.com/iv4s6uai?key=eb87731ce0c5ba0385ec684ed5c000c0"
-                  className="no-underline"
-                >
-                  <button className="px-6 py-3 rounded-full bg-transparent text-amber-400 border-2 border-amber-400 font-bold text-sm transition-all duration-300 shadow-[0_0_15px_rgba(245,158,11,0.5)] hover:bg-amber-400 hover:text-gray-950 hover:shadow-[0_0_25px_rgba(245,158,11,0.9)] hover:scale-105">
-                    Verify Here
-                  </button>
-                </a>
-                <a 
-                  href="https://guyprior.com/iv4s6uai?key=eb87731ce0c5ba0385ec684ed5c000c0"
-                  className="no-underline"
-                >
-                  <button 
-                    className="px-6 py-3 rounded-full text-white font-semibold text-sm transition-all duration-300 border border-amber-500 hover:scale-105 shadow-lg flex items-center gap-2"
-                    style={{ backgroundColor: '#202A36' }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.backgroundColor = '#1a2229';
-                      e.currentTarget.style.boxShadow = '0 0 15px rgba(245, 158, 11, 0.6)';
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.backgroundColor = '#202A36';
-                      e.currentTarget.style.boxShadow = 'none';
-                    }}
-                  >
-                    <span>Premium</span>
-                    <div className="relative w-5 h-5 flex items-center justify-center bg-white rounded-full border border-red-500">
-                      <span className="text-[6px] font-bold text-black scale-90">ADS</span>
-                      <div className="absolute inset-0 border-t-2 border-red-500 rotate-45 top-1/2 -translate-y-1/2"></div>
-                    </div>
-                  </button>
-                </a>
-              </div>
-            </div>
+      {/* Modern minimal glass card */}
+      <div className="relative bg-slate-950/40 backdrop-blur-2xl border border-white/10 p-8 md:p-10 rounded-3xl shadow-2xl flex flex-col items-center max-w-sm w-full text-center transition-all duration-300 hover:border-white/15">
+        
+        {/* Shield verification icon */}
+        <div className="relative mb-6">
+          <div className="absolute inset-0 bg-blue-500/20 blur-xl rounded-full animate-pulse"></div>
+          <div className="relative bg-slate-900 p-4 rounded-full border border-blue-500/30">
+            <ShieldCheck className="w-8 h-8 text-blue-400" />
           </div>
-
         </div>
-      </section>
+
+        {/* Minimal verification text */}
+        <h1 className="text-xl md:text-2xl font-bold text-white mb-8 tracking-tight font-sans">
+          Verify to get full access
+        </h1>
+
+        {/* Verify Button or Loader */}
+        <button
+          onClick={handleVerify}
+          disabled={status !== 'idle'}
+          className={`w-full py-4 rounded-2xl font-bold text-sm transition-all duration-300 flex items-center justify-center gap-2.5 ${
+            status === 'idle'
+              ? 'bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 hover:scale-[1.02] cursor-pointer'
+              : status === 'verifying'
+              ? 'bg-slate-800 text-slate-400 border border-slate-700 cursor-not-allowed'
+              : 'bg-green-600 text-white cursor-not-allowed'
+          }`}
+        >
+          {status === 'idle' && (
+            <>
+              <Lock className="w-4 h-4" />
+              <span>Verify</span>
+            </>
+          )}
+
+          {status === 'verifying' && (
+            <>
+              <div className="w-4 h-4 border-2 border-slate-500 border-t-slate-200 rounded-full animate-spin"></div>
+              <span>Verifying...</span>
+            </>
+          )}
+
+          {status === 'verified' && (
+            <>
+              <svg className="w-5 h-5 text-white animate-in zoom-in duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>Verified</span>
+            </>
+          )}
+        </button>
+
+        {/* Small security assurance footer */}
+        <span className="text-[10px] text-slate-500 mt-8 tracking-wider uppercase font-medium">
+          Secure Access Verification
+        </span>
+      </div>
     </div>
   )
 }
